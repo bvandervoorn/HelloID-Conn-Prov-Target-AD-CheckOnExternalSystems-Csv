@@ -7,7 +7,7 @@ if (Test-Path $path) {
     $samaccountnameList = Import-CSV -Path $path
     if ($samaccountnameList.Username -Contains($a.SamAccountName)) {
         $foundName = $True
-        $NonUniqueFields = @('SamAccountName','CommonName','AdditionalFields.proxyAddresses','AdditionalFields.userPrincipalName','AdditionalFields.mail')    
+        $NonUniqueFields = @('SamAccountName')    
     } else {
        $foundName = $False
        $NonUniqueFields = @()
